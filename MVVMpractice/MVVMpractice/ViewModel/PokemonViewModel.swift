@@ -19,11 +19,10 @@ class PokemonViewModel: ObservableObject {
     @Published var pokemonData: [PokemonModel.StructPokemon] = []
     @Published var pokemonDetail: [DetailPokemonModel] = []
     @Published var dataFlag: Bool = false
-    
-    private var _URL:String = "https://pokeapi.co/api/v2/type/16/"
+    private var _URL:String = ""
  
     init() {
-        self.getPokemons()
+        self.getPokemons(type: "16")
     }
     
     func fetchData(urls: String, callback: @escaping (_ data:Data? ,_ error: RequestError) -> Void) {
@@ -41,7 +40,8 @@ class PokemonViewModel: ObservableObject {
     }
     
 
-    func getPokemons() {
+    func getPokemons(type: String) {
+        _URL = "https://pokeapi.co/api/v2/type/\(type)/"
         self.fetchData(urls: _URL){ data, error in
             let result = try! JSONDecoder().decode(PokemonModel.self, from: data!)
             for item in result.pokemon {

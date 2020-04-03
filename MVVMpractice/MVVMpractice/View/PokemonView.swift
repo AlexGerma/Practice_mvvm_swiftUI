@@ -27,6 +27,30 @@ struct PokemonView: View {
                    }
                 }
             }.navigationBarTitle("Dragon pokemons")
+            .navigationBarItems(
+            trailing:
+                HStack {
+                    Button(action: {
+                        print("Back menu")
+                        }, label: {
+                            dropDownMenu{ value in
+                                print(value)
+                            }
+                    })
+                })
+        }
+    }
+}
+
+struct dropDownMenu: View {
+    @State var displayText = "Dragon"
+    var onSelect: ((_ value: Int) -> Void)?
+    var body: some View {
+        HStack{
+            DropdownButton(displayText: displayText, options: [ DropdownOption(key: 1, val: "Dragon"), DropdownOption(key: 2, val: "Ice")], onSelect: { val, key in
+                self.onSelect?(key)
+                self.displayText = val
+            }, buttonHeight: 20,fontSize: 15, fontColor: Color.black,iconColor: Color.black)
         }
     }
 }

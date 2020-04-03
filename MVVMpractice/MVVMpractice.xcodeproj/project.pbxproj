@@ -22,6 +22,7 @@
 		DB2F23FE243524E900F1F55F /* PokemonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F23FD243524E900F1F55F /* PokemonCard.swift */; };
 		DB77BDB42436E91A006FD011 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DB77BDB32436E91A006FD011 /* KingfisherSwiftUI */; };
 		DB77BDB52436E91A006FD011 /* KingfisherSwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DB77BDB32436E91A006FD011 /* KingfisherSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DB77BDB82436FF7A006FD011 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77BDB72436FF7A006FD011 /* DropDownMenu.swift */; };
 		DBEE827C243555D20026CC42 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEE827B243555D20026CC42 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		DB2F23F52435230200F1F55F /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
 		DB2F23F72435231100F1F55F /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 		DB2F23FD243524E900F1F55F /* PokemonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCard.swift; sourceTree = "<group>"; };
+		DB77BDB72436FF7A006FD011 /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
 		DBEE827B243555D20026CC42 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				DB2F23FD243524E900F1F55F /* PokemonCard.swift */,
+				DB77BDB72436FF7A006FD011 /* DropDownMenu.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			files = (
 				DB2F23C12435228F00F1F55F /* AppDelegate.swift in Sources */,
 				DB2F23F4243522EE00F1F55F /* PokemonView.swift in Sources */,
+				DB77BDB82436FF7A006FD011 /* DropDownMenu.swift in Sources */,
 				DB2F23C32435228F00F1F55F /* SceneDelegate.swift in Sources */,
 				DBEE827C243555D20026CC42 /* Helpers.swift in Sources */,
 				DB2F23C52435228F00F1F55F /* ContentView.swift in Sources */,
