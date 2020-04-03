@@ -11,19 +11,22 @@ import Combine
 import Foundation
 
 class Helpers: ObservableObject {
-
+    private var count: Int = 0
     func setBannerColor( detailPokemon: DetailPokemonModel) -> Color {
+        count = 0
         if detailPokemon.types.count >= 2 {
-            return Color("\(detailPokemon.types[1].type.name)-color")
+            count = 1
         }
-        return Color("\(detailPokemon.types[0].type.name)-color")
+        return Color("\(detailPokemon.types[count].type.name)-color")
+       
     }
-    
+
     func setImageBanner( detailPokemon: DetailPokemonModel) -> Image {
-        if detailPokemon.types.count >= 2 {
-            return Image("\(detailPokemon.types[1].type.name)-img")
+       count = 0
+       if detailPokemon.types.count >= 2 {
+                  count = 1
         }
-        return Image("\(detailPokemon.types[0].type.name)-img")
+        return Image("\(detailPokemon.types[count].type.name)-img")
     }
 }
 

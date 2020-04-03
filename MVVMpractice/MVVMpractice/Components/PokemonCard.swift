@@ -67,7 +67,7 @@ struct PokemonCard: View {
     }
 }
 
-//internal text component use in title course
+//internal text component use in title card
 struct cardTitle: View {
     var text: String
     var sizeFont: CGFloat
@@ -80,7 +80,7 @@ struct cardTitle: View {
     }
 }
 
-//image the user with circle
+//image the pokemon
 struct cardTypeImg: View {
     var img: KFImage
     var body: some View {
@@ -90,7 +90,7 @@ struct cardTypeImg: View {
     }
 }
 
-//internal text component use in subtitle course
+//internal text component use in subtitle card
 struct cardSubTitle: View {
     var text: String
     var sizeFont: CGFloat
