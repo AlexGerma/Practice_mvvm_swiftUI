@@ -20,6 +20,8 @@
 		DB2F23F82435231100F1F55F /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F23F72435231100F1F55F /* PokemonViewModel.swift */; };
 		DB2F23FB2435241E00F1F55F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DB2F23FA2435241E00F1F55F /* Alamofire */; };
 		DB2F23FE243524E900F1F55F /* PokemonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2F23FD243524E900F1F55F /* PokemonCard.swift */; };
+		DB77BDB42436E91A006FD011 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DB77BDB32436E91A006FD011 /* KingfisherSwiftUI */; };
+		DB77BDB52436E91A006FD011 /* KingfisherSwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DB77BDB32436E91A006FD011 /* KingfisherSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DBEE827C243555D20026CC42 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEE827B243555D20026CC42 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,20 @@
 			remoteInfo = MVVMpractice;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB77BDB62436E91A006FD011 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB77BDB52436E91A006FD011 /* KingfisherSwiftUI in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DB2F23BD2435228F00F1F55F /* MVVMpractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMpractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB77BDB42436E91A006FD011 /* KingfisherSwiftUI in Frameworks */,
 				DB2F23FB2435241E00F1F55F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +220,7 @@
 				DB2F23B92435228F00F1F55F /* Sources */,
 				DB2F23BA2435228F00F1F55F /* Frameworks */,
 				DB2F23BB2435228F00F1F55F /* Resources */,
+				DB77BDB62436E91A006FD011 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,6 +229,7 @@
 			name = MVVMpractice;
 			packageProductDependencies = (
 				DB2F23FA2435241E00F1F55F /* Alamofire */,
+				DB77BDB32436E91A006FD011 /* KingfisherSwiftUI */,
 			);
 			productName = MVVMpractice;
 			productReference = DB2F23BD2435228F00F1F55F /* MVVMpractice.app */;
@@ -286,6 +305,7 @@
 			mainGroup = DB2F23B42435228F00F1F55F;
 			packageReferences = (
 				DB2F23F92435241E00F1F55F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DB77BDB22436E91A006FD011 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = DB2F23BE2435228F00F1F55F /* Products */;
 			projectDirPath = "";
@@ -672,6 +692,14 @@
 				minimumVersion = 5.0.5;
 			};
 		};
+		DB77BDB22436E91A006FD011 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.13.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -679,6 +707,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DB2F23F92435241E00F1F55F /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		DB77BDB32436E91A006FD011 /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB77BDB22436E91A006FD011 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

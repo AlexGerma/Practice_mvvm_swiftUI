@@ -47,8 +47,8 @@ struct DetailPokemonModel: Identifiable,Decodable {
     
     //sprites structure
     struct StructSprites: Decodable {
-        let back_default: URL?
-        let front_default: URL?
+        let back_default: String?
+        let front_default: String?
     }
     
     //types structure

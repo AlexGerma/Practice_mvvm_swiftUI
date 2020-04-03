@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 
 struct PokemonCard: View {
     var id: Int
@@ -16,7 +17,7 @@ struct PokemonCard: View {
     var seccion: String
     var pokemon_type: String
     var imgBanner: Image
-    var imgType: Image
+    var imgType: KFImage
     var onClick: ((_ value: Int) -> Void)?
     
     var body: some View {
@@ -33,33 +34,30 @@ struct PokemonCard: View {
                     self.onClick!(self.id)
                 },label: {
                      VStack{
-                         VStack {
-                             HStack {
-                                 cardTitle(text: self.pokemon_name, sizeFont: 19)
-                                 Spacer()
-                                 Image(systemName: "greaterthan").resizable().frame(width:10, height: 20)
-                                     .font(.system(size: 30 ,weight: .semibold))
-                                     .foregroundColor(.white).padding(.top)
-                                 
-                             }.padding(.horizontal)
-                             HStack {
-                                 cardSubTitle(text: "\(self.pokemon_key)", sizeFont: 14)
-                                 cardSubTitle(text: "-", sizeFont: 14)
-                                 cardSubTitle(text: self.seccion, sizeFont: 14)
-                                 Spacer()
-                             }.padding(.horizontal).padding(.top,-10)
-                         }.padding(.top,10).padding(.bottom,-10)
-                         
-                         VStack {
+                        VStack(alignment:.leading){
                              HStack{
+                                HStack {
+                                   cardTypeImg(img: imgType)
+                                }
+                                 VStack(alignment: .leading) {
+                                     cardTitle(text: self.pokemon_name, sizeFont: 19)
+                                    HStack {
+                                        cardSubTitle(text: "\(self.pokemon_key)", sizeFont: 14)
+                                        cardSubTitle(text: "-", sizeFont: 14)
+                                        cardSubTitle(text: self.seccion, sizeFont: 14)
+                                    }
+                                    cardSubTitle(text: self.pokemon_type, sizeFont: 14)
+                                     
+                                 }
                                  Spacer()
-                                 VStack(alignment: .trailing) {
-                                     cardSubTitle(text: self.pokemon_type,sizeFont: 15)
-                                 }
-                                 HStack {
-                                    cardTypeImg(img: imgType)
-                                 }
-                             }.padding(.horizontal).padding(.bottom)
+                                HStack{
+                                    Image(systemName: "greaterthan").resizable().frame(width:10, height: 20)
+                                    .font(.system(size: 30 ,weight: .semibold))
+                                    .foregroundColor(.white).padding(.horizontal,5)
+                                }
+                        }.padding(.horizontal)
+                         
+                         
                          }
                          
                      }.background(self.color)
@@ -84,11 +82,11 @@ struct cardTitle: View {
 
 //image the user with circle
 struct cardTypeImg: View {
-    var img: Image
+    var img: KFImage
     var body: some View {
         img.resizable().clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 0))
-            .frame(width:60, height: 50)
+            .frame(width:100, height: 100).padding(.all)
     }
 }
 
@@ -106,7 +104,7 @@ struct cardSubTitle: View {
 
 struct PokemonCard_Previews: PreviewProvider {
     static var previews: some View {
-       PokemonCard(id: 1,color: Color.blue,pokemon_name:"charizar", pokemon_key: 300,seccion: "Primera generacion",pokemon_type: " Chazarizar",imgBanner: Image("launch"),imgType: Image("launch"),onClick:{value in
+       PokemonCard(id: 1,color: Color.blue,pokemon_name:"charizar", pokemon_key: 300,seccion: "Primera generacion",pokemon_type: "dragon",imgBanner: Image("launch"),imgType: KFImage(URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png")),onClick:{value in
         print(value)} )
     }
 }

@@ -61,7 +61,12 @@ class PokemonViewModel: ObservableObject {
         }
     }
     
-   
+    func setImageURL(sprite : DetailPokemonModel.StructSprites) -> String? {
+        print(sprite)
+        if sprite.front_default != nil { return sprite.front_default }
+        if sprite.back_default != nil { return sprite.back_default }
+        return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"
+    }
     
 }
 
